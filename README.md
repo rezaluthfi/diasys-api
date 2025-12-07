@@ -48,12 +48,12 @@ backend_diasys/
 
 ## 🌐 Production API
 
-**Base URL**: `https://diasys-api.up.railway.app`
+**Base URL**: `https://diasys-api.duckdns.org`
 
 **Dokumentasi API**:
 
-- **Swagger UI**: https://diasys-api.up.railway.app/docs
-- **ReDoc**: https://diasys-api.up.railway.app/redoc
+- **Swagger UI**: https://diasys-api.duckdns.org/docs
+- **ReDoc**: https://diasys-api.duckdns.org/redoc
 
 ## 🚀 Quick Start
 
@@ -97,8 +97,8 @@ Server akan berjalan di: http://localhost:8000
 
 **Production**:
 
-- **Swagger UI**: https://diasys-api.up.railway.app/docs
-- **ReDoc**: https://diasys-api.up.railway.app/redoc
+- **Swagger UI**: https://diasys-api.duckdns.org/docs
+- **ReDoc**: https://diasys-api.duckdns.org/redoc
 
 ## 📡 Endpoints
 
@@ -119,12 +119,12 @@ Server akan berjalan di: http://localhost:8000
 
 ## 💡 Contoh Penggunaan
 
-**Base URL Production**: `https://diasys-api.up.railway.app`
+**Base URL Production**: `https://diasys-api.duckdns.org`
 
 ### Register
 
 ```bash
-curl -X POST "https://diasys-api.up.railway.app/register" \
+curl -X POST "https://diasys-api.duckdns.org/register" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "John Doe",
@@ -137,7 +137,7 @@ curl -X POST "https://diasys-api.up.railway.app/register" \
 ### Login
 
 ```bash
-curl -X POST "https://diasys-api.up.railway.app/login" \
+curl -X POST "https://diasys-api.duckdns.org/login" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "username=john@example.com&password=SecurePass123!"
 ```
@@ -168,7 +168,7 @@ Response:
 ### Predict Diabetes
 
 ```bash
-curl -X POST "https://diasys-api.up.railway.app/predict" \
+curl -X POST "https://diasys-api.duckdns.org/predict" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -d '{
@@ -186,12 +186,14 @@ curl -X POST "https://diasys-api.up.railway.app/predict" \
 
 ## 🚀 Deployment
 
-API ini sudah di-deploy di **Railway** dengan konfigurasi:
+API ini sudah di-deploy di **VPS Contabo** dengan konfigurasi:
 
-**Platform**: Railway  
-**URL**: https://diasys-api.up.railway.app  
-**Python Version**: 3.13  
-**Database**: SQLite (development)
+**Platform**: VPS (Ubuntu 22.04) + Nginx + Gunicorn  
+**URL**: https://diasys-api.duckdns.org  
+**SSL**: Let's Encrypt (Auto-renew)  
+**Python Version**: 3.10  
+**Database**: SQLite (development)  
+**Domain**: DuckDNS (Free)
 
 **Environment Variables yang diperlukan**:
 

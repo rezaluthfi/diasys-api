@@ -2,9 +2,8 @@
 
 ## 🌐 Base URL
 
-```
-http://localhost:8000
-```
+**Production**: `https://diasys-api.duckdns.org`  
+**Development**: `http://localhost:8000`
 
 ## 📋 Table of Contents
 
