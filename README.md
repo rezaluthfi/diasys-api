@@ -22,11 +22,11 @@ backend_diasys/
 │       └── ml_model.py      # ML model loader
 │
 ├── main.py                  # Entry point
-├── .env                     # Environment variables (JANGAN COMMIT!)
+├── .env                     # Environment variables
 ├── .env.example             # Template environment
 ├── .gitignore               # Git ignore patterns
 ├── requirements.txt         # Python dependencies
-├── database.db              # SQLite database (JANGAN COMMIT!)
+├── database.db              # SQLite database
 ├── models/                  # ML model files
 │   ├── diabetes_model.pkl
 │   └── scaler.pkl
@@ -241,5 +241,3 @@ from app.database import get_db
 Proyek ini adalah bagian dari Praktikum Penambangan Data Semester 5.
 
 ---
-
-**⚠️ PERHATIAN KEAMANAN**: Jangan commit file `.env`, `database.db`, atau credentials lainnya ke Git!
