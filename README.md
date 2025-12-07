@@ -206,18 +206,6 @@ API ini sudah di-deploy di **Railway** dengan konfigurasi:
 - `API_DESCRIPTION`
 - `API_VERSION`
 
-## 🔐 Security Checklist
-
-Sebelum push ke GitHub:
-
-- ✅ File `.env` ada di `.gitignore`
-- ✅ File `database.db` ada di `.gitignore`
-- ✅ `SECRET_KEY` diganti dengan nilai random
-- ✅ `REFRESH_SECRET_KEY` diganti dengan nilai random
-- ✅ Production environment menggunakan database yang proper (PostgreSQL, MySQL)
-
-Lihat [SECURITY_SETUP.md](SECURITY_SETUP.md) untuk panduan lengkap (jika ada).
-
 ## 🛠️ Tech Stack
 
 - **FastAPI** - Modern web framework
@@ -234,12 +222,14 @@ Lihat [SECURITY_SETUP.md](SECURITY_SETUP.md) untuk panduan lengkap (jika ada).
 fastapi==0.115.0
 uvicorn[standard]==0.32.0
 sqlalchemy==2.0.36
-passlib[bcrypt]==1.7.4
+passlib==1.7.4
+bcrypt==4.1.2
 python-jose[cryptography]==3.3.0
-python-multipart==0.0.17
-pydantic==2.10.2
-scikit-learn==1.5.2
+python-multipart==0.0.12
+pydantic[email]==2.10.2
 pydantic-settings==2.6.1
+scikit-learn==1.5.2
+numpy==2.1.3
 python-dotenv==1.0.1
 ```
 
