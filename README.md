@@ -46,6 +46,15 @@ backend_diasys/
 - ✅ **Health Metrics**: Detailed health information dalam response
 - ✅ **Modular Architecture**: Separation of concerns untuk maintainability
 
+## 🌐 Production API
+
+**Base URL**: `https://diasys-api.up.railway.app`
+
+**Dokumentasi API**:
+
+- **Swagger UI**: https://diasys-api.up.railway.app/docs
+- **ReDoc**: https://diasys-api.up.railway.app/redoc
+
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
@@ -81,8 +90,15 @@ Server akan berjalan di: http://localhost:8000
 
 ### 4. Akses Dokumentasi API
 
+**Development (Local)**:
+
 - **Swagger UI**: http://localhost:8000/docs
 - **ReDoc**: http://localhost:8000/redoc
+
+**Production**:
+
+- **Swagger UI**: https://diasys-api.up.railway.app/docs
+- **ReDoc**: https://diasys-api.up.railway.app/redoc
 
 ## 📡 Endpoints
 
@@ -103,10 +119,12 @@ Server akan berjalan di: http://localhost:8000
 
 ## 💡 Contoh Penggunaan
 
+**Base URL Production**: `https://diasys-api.up.railway.app`
+
 ### Register
 
 ```bash
-curl -X POST "http://localhost:8000/register" \
+curl -X POST "https://diasys-api.up.railway.app/register" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "John Doe",
@@ -119,7 +137,7 @@ curl -X POST "http://localhost:8000/register" \
 ### Login
 
 ```bash
-curl -X POST "http://localhost:8000/login" \
+curl -X POST "https://diasys-api.up.railway.app/login" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "username=john@example.com&password=SecurePass123!"
 ```
@@ -150,21 +168,43 @@ Response:
 ### Predict Diabetes
 
 ```bash
-curl -X POST "http://localhost:8000/prediction/predict" \
+curl -X POST "https://diasys-api.up.railway.app/predict" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -d '{
-    "Pregnancies": 2,
-    "Glucose": 120,
-    "BloodPressure": 70,
-    "SkinThickness": 20,
-    "Insulin": 80,
-    "Weight": 70,
-    "Height": 1.65,
-    "DiabetesPedigreeFunction": 0.5,
-    "Age": 30
+    "pregnancies": 2,
+    "glucose": 120,
+    "blood_pressure": 70,
+    "skin_thickness": 20,
+    "insulin": 80,
+    "weight": 70,
+    "height": 1.65,
+    "diabetes_pedigree_function": 0.5,
+    "age": 30
   }'
 ```
+
+## 🚀 Deployment
+
+API ini sudah di-deploy di **Railway** dengan konfigurasi:
+
+**Platform**: Railway  
+**URL**: https://diasys-api.up.railway.app  
+**Python Version**: 3.13  
+**Database**: SQLite (development)
+
+**Environment Variables yang diperlukan**:
+
+- `SECRET_KEY`
+- `REFRESH_SECRET_KEY`
+- `ALGORITHM`
+- `ACCESS_TOKEN_EXPIRE_MINUTES`
+- `REFRESH_TOKEN_EXPIRE_DAYS`
+- `DATABASE_URL`
+- `CORS_ORIGINS`
+- `API_TITLE`
+- `API_DESCRIPTION`
+- `API_VERSION`
 
 ## 🔐 Security Checklist
 
