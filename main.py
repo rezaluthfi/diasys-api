@@ -58,7 +58,19 @@ def root():
         "status": "success",
         "message": "DiaSys API is running",
         "version": settings.API_VERSION,
-        "docs": "/docs"
+        "features": {
+            "authentication": "JWT with refresh token",
+            "access_token_expiry": "30 minutes",
+            "refresh_token_expiry": "7 days"
+        },
+        "endpoints": {
+            "register": "/register",
+            "login": "/login (returns access + refresh token)",
+            "refresh": "/refresh (get new access token)",
+            "logout": "/logout",
+            "predict": "/predict",
+            "docs": "/docs"
+        }
     }
 
 # Include routers

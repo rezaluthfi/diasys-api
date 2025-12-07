@@ -58,7 +58,8 @@ def register(user: UserRegister, db: Session = Depends(get_db)):
         "data": {
             "user_id": db_user.id,
             "name": db_user.name,
-            "email": db_user.email
+            "email": db_user.email,
+            "next_step": "Silakan login menggunakan email dan password Anda"
         }
     }
 
@@ -119,11 +120,16 @@ def refresh_access_token(request: RefreshTokenRequest, db: Session = Depends(get
     
     return {
         "status": "success",
-        "message": "Token refreshed",
+        "message": "Access token berhasil diperbarui",
         "data": {
             "access_token": new_access_token,
             "token_type": "bearer",
-            "expires_in": settings.ACCESS_TOKEN_EXPIRE_MINUTES * 60
+            "user": {
+                "user_id": user.id,
+                "name": user.name,
+                "email": user.email
+            },
+            "expires_in": "30 minutes"
         }
     }
 
@@ -136,5 +142,8 @@ def logout(current_user: User = Depends(get_current_user), db: Session = Depends
     
     return {
         "status": "success",
-        "message": "Logout berhasil"
+        "message": "Logout berhasil",
+        "data": {
+            "info": "Token telah dihapus. Silakan login kembali untuk mengakses sistem."
+        }
     }
